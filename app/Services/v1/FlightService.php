@@ -12,6 +12,6 @@ class FlightService
 
     public function getFlight($flightNumber)
     {
-        return Flight::where('flightNumber', $flightNumber);
+        return Flight::where('flightNumber', $flightNumber)->get();
     }
 }

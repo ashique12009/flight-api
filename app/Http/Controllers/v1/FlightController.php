@@ -58,7 +58,10 @@ class FlightController extends Controller
      */
     public function show($id)
     {
-        //
+        //call service
+        $data = $this->flights->getFlight($id);
+        //return data
+        return response()->json($data);
     }
 
     /**
