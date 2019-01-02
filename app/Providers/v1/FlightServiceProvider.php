@@ -25,7 +25,7 @@ class FlightServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(FlightService::class, function($app){
-            return new FlightSerice();
+            return new FlightService();
         });
     }
 }
