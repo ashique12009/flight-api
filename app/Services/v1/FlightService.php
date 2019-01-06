@@ -2,6 +2,7 @@
 
 namespace App\Services\v1;
 use App\Flight;
+use Auth;
 
 class FlightService
 {
@@ -24,9 +25,9 @@ class FlightService
         $flight->arrivalDateTime = $req->input('arrival.datetime');
         $flight->departureAirport_id = $req->input('departureAirport_id');
         $flight->departureDateTime = $req->input('departure.datetime');
+        $flight->user_id = $req->input('user_id');
 
         $flight->save();
-
         return $flight;
     }
 }

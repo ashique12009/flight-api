@@ -21,6 +21,7 @@ class CreateFlightsTable extends Migration
             $table->integer('departureAirport_id');
             $table->datetime('departureDateTime');
             $table->string('status');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
