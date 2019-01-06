@@ -73,7 +73,15 @@ class FlightController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try
+        {
+            $flight = $this->flights->updateFlight($request, $id);
+            return response()->json($flight, 200);
+        }
+        catch(Exception $e)
+        {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
     }
 
     /**
@@ -84,6 +92,14 @@ class FlightController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try
+        {
+            $flight = $this->flights->deleteFlight($request, $id);
+            return response()->make('', 204);
+        }
+        catch(Exception $e)
+        {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
     }
 }
